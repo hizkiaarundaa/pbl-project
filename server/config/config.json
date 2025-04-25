@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "dev",
+    "password": "0000",
+    "database": "dauraksi_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "dev",
+    "password": "0000",
+    "database": "dauraksi_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "dauraksi",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
