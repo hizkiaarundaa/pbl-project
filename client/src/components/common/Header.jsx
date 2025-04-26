@@ -38,6 +38,7 @@ const Header = () => {
         const user = event.data.user
         setUser(user)
         alert(`Selamat datang kembali, ${user.displayName}`)
+        window.location.reload()
       }
     }
 
@@ -69,6 +70,7 @@ const Header = () => {
       localStorage.removeItem("user")
       setUser(null)
       navigate("/")
+      window.location.reload()
     } catch (err) {
       console.error("Logout gagal:", err)
     }
@@ -104,6 +106,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      <div className="sm:hidden border-l border-2 rounded-xl border-white h-10 mx-2 "></div>
       <div
         id="toggle-navbar"
         className="sm:hidden h-full flex justify-center items-center cursor-pointer"

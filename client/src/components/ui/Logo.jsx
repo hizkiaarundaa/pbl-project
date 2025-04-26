@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 // pastikan path-nya sesuai
 
-const Logo = () => {
+const Logo = ({ title }) => {
   const navigate = useNavigate()
   const [isHovering, setIsHovering] = useState(false)
 
@@ -10,6 +10,7 @@ const Logo = () => {
     <img
       src="/logo.png"
       alt="logo dauraksi"
+      title={title ?? null}
       onClick={() => navigate("/")}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}

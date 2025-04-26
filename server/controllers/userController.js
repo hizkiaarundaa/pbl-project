@@ -34,7 +34,6 @@ exports.updateUser = async (req, res) => {
       await user.save()
       return res.json(user)
     }
-
     return res.status(404).json({ message: "User not found" })
   } catch (err) {
     console.error(err)

@@ -1,7 +1,5 @@
 // authController.js
 const passport = require("passport")
-const downloadProfilePicture = require("../utils/downloadProfilePicture")
-const upload = require("../utils/multerStorage")
 
 // [1] Redirect ke Google untuk login
 exports.googleLogin = passport.authenticate("google", {

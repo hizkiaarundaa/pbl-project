@@ -2,6 +2,8 @@ import React from "react"
 import HeroButton from "./HeroButton"
 
 const Hero = () => {
+  // Cek status login user
+  const isLoggedIn = !!localStorage.getItem("user")
   const handleJoin = () => {
     const width = 600
     const height = 600
@@ -22,11 +24,7 @@ const Hero = () => {
   }
 
   return (
-    <div
-      className="hero min-h-full"
-      style={{
-        backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-      }}>
+    <div className="hero min-h-full bg-[url('Hero.jpg')] bg-center bg-no-repeat ">
       <div className="hero-overlay"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
@@ -35,8 +33,8 @@ const Hero = () => {
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
             deleniti eaque aut repudiandae et a id nisi.
           </p>
-          <div className="flex justify-between items-center">
-            <HeroButton onClick={handleJoin} title="Gabung Sekarang" />
+          <div className="flex justify-center items-center gap-5">
+            {!isLoggedIn && <HeroButton onClick={handleJoin} title="Gabung Sekarang" />}
             <HeroButton onClick={handleCommunity} title="Komunitas DaurAksi" />
           </div>
         </div>

@@ -13,7 +13,6 @@ const UserProfile = () => {
         const res = await axios.get("http://localhost:3000/auth/user", {
           withCredentials: true, // Agar session cookie bisa terkirim
         })
-        console.log(res.data)
         setUser(res.data)
       } catch (err) {
         console.error("Gagal mengambil data user:", err)
@@ -26,12 +25,11 @@ const UserProfile = () => {
   if (!user) {
     return <div className="text-center text-yellow-500 text-xl mt-10">Loading profile...</div>
   }
-
   return (
     <main className="w-full flex justify-center  h-full sm:grid sm:place-content-center min-h-dvh p-2 ">
       <div className="flex flex-col w-full h-full sm:h-[75dvh] sm:w-[50dvw] border-2 border-green-500 rounded-2xl items-center sm:justify-center p-2 sm:p-8 shadow-2xl shadow-green-900 overflow-hidden">
         <div className="md:w-40 grid place-content-center">
-          <Logo />
+          <Logo title="Back To Home Page" />
         </div>
         <h1 className="text-center w-full text-3xl font-semibold text-green-600">Profile</h1>
         <Avatar src={user.photo} />
