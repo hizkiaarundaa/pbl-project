@@ -10,7 +10,7 @@ const Hero = () => {
     const left = window.screenX + (window.outerWidth - width) / 2
     const top = window.screenY + (window.outerHeight - height) / 2
     const popup = window.open(
-      "http://localhost:3000/auth/google",
+      `${import.meta.env.VITE_BACKEND_URL}/auth/google`,
       "Google Login",
       `width=${width},height=${height},left=${left},top=${top},scrollbars=yes`,
     )
@@ -24,7 +24,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="hero min-h-full bg-[url('Hero.jpg')] bg-center bg-no-repeat ">
+    <div className="hero min-h-full bg-[url('Hero.webp')] bg-center bg-no-repeat ">
       <div className="hero-overlay"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">

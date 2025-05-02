@@ -11,7 +11,7 @@ const EdukasiPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/eduposts/${id}`)
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/eduposts/${id}`)
         setPost(res.data)
       } catch (error) {
         console.error("Error fetching post:", error)

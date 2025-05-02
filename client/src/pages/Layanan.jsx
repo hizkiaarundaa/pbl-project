@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import LayananWrapper from "../components/Layanan/LayananWrapper.jsx"
+import Loaders from "../components/ui/Loaders.jsx"
 
-const LOGIN_URL = "http://localhost:3000/auth/google" // URL for Google login
+const LOGIN_URL = `${import.meta.env.VITE_BACKEND_URL}/auth/google` // URL for Google login
 
 const Layanan = () => {
   const popupRef = useRef(null)
@@ -67,24 +68,30 @@ const Layanan = () => {
   const user = localStorage.getItem("user")
   if (!user) {
     return (
-      <div className="relative h-full min-h-screen">
-        {/* Alert at the top of the page */}
+      <div className="relative h-full w-full">
+        {/* Alert and Loader overlay */}
         {showAlert && (
-          <div className="fixed top-4 left-1/2 z-50 -translate-x-1/2 w-full max-w-md px-4">
-            <div className="alert alert-warning shadow-lg">
-              <span className="font-semibold">Anda harus login untuk mengakses Layanan ini</span>
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/40">
+            <div className="w-full max-w-xl px-4 mb-6">
+              <div className="alert alert-warning shadow-md text-white text-center">
+                <span className="font-semibold">Anda harus login untuk mengakses Layanan ini</span>
+              </div>
             </div>
+            <Loaders />
           </div>
         )}
-        <div className="flex h-full items-center justify-center">
-          <div className="text-lg text-gray-600">Membuka login Google...</div>
-        </div>
+        {!showAlert && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className="text-lg text-gray-600 mb-6">Membuka login Google...</div>
+            <Loaders />
+          </div>
+        )}
       </div>
     )
   }
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full w-full">
       <LayananWrapper />
     </div>
   )

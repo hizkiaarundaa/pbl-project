@@ -31,7 +31,7 @@ const Edukasi = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    axios.get("http://localhost:3000/eduposts").then((res) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/eduposts`).then((res) => {
       setPosts(res.data)
       setTimeout(() => setLoading(false), 300) // Show skeleton for 300ms
     })

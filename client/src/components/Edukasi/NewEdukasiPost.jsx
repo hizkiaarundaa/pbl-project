@@ -33,7 +33,7 @@ const NewEdukasiPost = () => {
     setError("")
     setSuccess(false)
     try {
-      await axios.post("http://localhost:3000/eduposts/", {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/eduposts/`, {
         ...values,
         username,
       })
@@ -95,8 +95,8 @@ const NewEdukasiPost = () => {
                   {username || <span className="text-red-500">Username tidak ditemukan</span>}
                 </div>
               </div>
-              <div className="flex flex-col gap-2 w-full max-w-xs mx-auto">
-                <Button type="submit" disabled={isSubmitting || !username} title="Buat Postingan">
+              <div className="flex flex-col gap-2 w-full max-w-48  mx-auto">
+                <Button type="submit" disabled={isSubmitting || !username} title="Kirim">
                   {isSubmitting ? "Mengirim..." : "Posting"}
                 </Button>
                 <Button title="Kembali" onClick={handleBack} />

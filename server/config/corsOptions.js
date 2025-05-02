@@ -1,7 +1,7 @@
 const allowOrigins = [
   "https://www.yoursite.com",
-  "http://localhost:5173",
-  "http://localhost:6969",
+  "http://localhost:3001",
+  "http://localhost:3000",
   "https://lh3.googleusercontent.com",
 ]
 const corsOptions = {

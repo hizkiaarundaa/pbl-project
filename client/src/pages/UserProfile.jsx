@@ -10,7 +10,7 @@ const UserProfile = () => {
     const fetchUser = async () => {
       try {
         // Mengambil data user dengan cek autentikasi dari backend
-        const res = await axios.get("http://localhost:3000/auth/user", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/user`, {
           withCredentials: true, // Agar session cookie bisa terkirim
         })
         setUser(res.data)

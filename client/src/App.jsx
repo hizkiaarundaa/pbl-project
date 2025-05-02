@@ -19,10 +19,10 @@ import EdukasiPost from "./components/Edukasi/EdukasiPost.jsx"
 
 function App() {
   return (
-    <Router>
+
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/edukasi" element={<Edukasi />} />
           <Route path="/layanan" element={<Layanan />} />
           <Route path="/hadiah" element={<Hadiah />} />
@@ -32,7 +32,6 @@ function App() {
         <Route path="/auth/google/callback" element={<GoogleCallback />} />
         <Route path="/profile" element={<UserProfile />} />
       </Routes>
-    </Router>
   )
 }
 
