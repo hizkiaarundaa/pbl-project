@@ -62,11 +62,15 @@ const NewEdukasiPost = () => {
         <h2 className="text-2xl font-bold mb-4 text-green-700">Buat Post Edukasi Baru</h2>
         {/* Alert untuk poin bertambah */}
         {showPointAlert && (
-          <div className="alert bg-green-700 text-white shadow-lg mb-4 min-h-14 min-w-28 text-2xl">
+          <div
+            className="alert bg-green-700 text-white shadow-lg mb-4 min-h-14 min-w-28 text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <span className="font-semibold">Selamat! Poin kamu bertambah 10 🎉</span>
           </div>
         )}
-        <Formik initialValues={{ title: "", description: "" }} validationSchema={EdukasiSchema} onSubmit={handleSubmit}>
+        <Formik
+          initialValues={{ title: "", description: "" }}
+          validationSchema={EdukasiSchema}
+          onSubmit={handleSubmit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">
               <div>
@@ -77,7 +81,11 @@ const NewEdukasiPost = () => {
                   className="w-full border rounded px-3 py-2"
                   placeholder="Masukkan title edukasi"
                 />
-                <ErrorMessage name="title" component="div" className="text-red-600 text-sm" />
+                <ErrorMessage
+                  name="title"
+                  component="div"
+                  className="text-red-600 text-sm"
+                />
               </div>
               <div>
                 <label className="block mb-1 font-medium">Desciption</label>
@@ -87,7 +95,11 @@ const NewEdukasiPost = () => {
                   className="w-full border rounded px-3 min-h-[120px]"
                   placeholder="Tulis description edukasi di sini"
                 />
-                <ErrorMessage name="description" component="div" className="text-red-600 text-sm" />
+                <ErrorMessage
+                  name="description"
+                  component="div"
+                  className="text-red-600 text-sm"
+                />
               </div>
               <div>
                 <label className="block mb-1 font-medium">Username</label>
@@ -96,10 +108,16 @@ const NewEdukasiPost = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-2 w-full max-w-48  mx-auto">
-                <Button type="submit" disabled={isSubmitting || !username} title="Kirim">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting || !username}
+                  title="Kirim">
                   {isSubmitting ? "Mengirim..." : "Posting"}
                 </Button>
-                <Button title="Kembali" onClick={handleBack} />
+                <Button
+                  title="Kembali"
+                  onClick={handleBack}
+                />
               </div>
               {success && <div className="text-green-600 font-medium">Post edukasi berhasil dibuat!</div>}
               {error && <div className="text-red-600 font-medium">{error}</div>}

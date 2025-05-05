@@ -124,7 +124,7 @@ const Header = () => {
             />
           </>
         ) : (
-          <div className="wrapper sm:w-40 flex h-full items-center justify-end sm:justify-evenly gap-4">
+          <>
             <Avatar
               src={user.photo}
               onClick={handleProfile}
@@ -135,7 +135,7 @@ const Header = () => {
               title="Logout"
               onClick={handleLogout}
             />
-          </div>
+          </>
         )}
       </div>
       <div className="sm:hidden border-l border-2 rounded-xl border-white h-10 mx-2 "></div>
