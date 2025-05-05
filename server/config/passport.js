@@ -11,23 +11,22 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const existingUser = await User.findOne({ where: { googleID: profile.id } })
-        if (existingUser) {
-          return done(null, existingUser)
-        }
+        const email = profile.emails[0].value
+        const googleId = profile.id
+        const displayName = profile.displayName
+        const photo = profile.photos[0].value
 
-        const newUser = await User.create({
-          googleID: profile.id,
-          displayName: profile.displayName,
-          username: profile.emails[0].value.split("@")[0], // Menggunakan username email untuk sementara
-          email: profile.emails[0].value,
-          photo: profile.photos[0].value,
-          points: 0,
+        const user = await User.findOne({ where: { googleId } })
+        if (user) return done(null, user)
+
+        return done(null, {
+          googleId,
+          email,
+          displayName,
+          photo,
         })
-
-        return done(null, newUser)
       } catch (error) {
-        return done(error, false)
+        return done(error, null)
       }
     },
   ),
