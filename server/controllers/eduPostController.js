@@ -29,7 +29,7 @@ const createPost = async (req, res) => {
     const post = req.body
     const newPost = await EduPost.create(post)
 
-    // Add 10 points to the user (search by username or displayName)
+
     const userIdentifier = post.username
     if (userIdentifier) {
       await User.increment(

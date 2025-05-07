@@ -3,6 +3,17 @@
   themes: light --default;
 }
 
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    background: transparent;
+  }
+
+  input[type="number"] {
+    appearance: textfield; /* Untuk Firefox */
+  }
+}
+
 html,
 body,
 #root {

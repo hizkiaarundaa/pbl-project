@@ -91,8 +91,14 @@ const Layanan = () => {
   }
 
   return (
-    <div className="flex h-full w-full">
-      <LayananWrapper />
+    <div className="relative flex justify-center h-full w-full bg-[url('layananBg.jpeg')] bg-cover bg-center">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+
+      {/* Konten utama */}
+      <div className="relative z-10 flex justify-center items-center w-full h-full px-4">
+        <LayananWrapper />
+      </div>
     </div>
   )
 }

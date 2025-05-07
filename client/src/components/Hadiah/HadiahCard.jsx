@@ -1,17 +1,17 @@
 const HadiahCard = () => {
   return (
-    <div
-      className="w-full min-w-2xs h-full min-h-2/4"
-      >
-      <div className="card w-full bg-base-100 shadow-md border border-gray-200 h-full">
-        <div className="card-body p-4 flex flex-col h-full">
-          <h2 className="card-title text-md font-semibold text-gray-800 ">Title</h2>
-          <p className="text-gray-600 text-sm sm:text-base mb-4 text-justify">Deskripsi</p>
-          <div className="card-actions justify-start items-center mt-auto">
-            <p className="text-xs sm:text-sm font-bold border border-green-200 h-full grid place-content-center rounded-3xl text-green-500">
-              <span></span>
-            </p>
-          </div>
+    <div className="card bg-base-100 image-full w-96 shadow-sm">
+      <figure>
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          alt="Shoes"
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">Card Title</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div className="card-actions justify-end">
+          <button className="btn btn-warning">Buy Now</button>
         </div>
       </div>
     </div>

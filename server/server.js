@@ -12,6 +12,7 @@ const app = express()
 const authRoutes = require("./routes/auth.js")
 const userRoutes = require("./routes/user.js")
 const eduPostsRoutes = require("./routes/edupost.js")
+const layananRoutes = require("./routes/layanan.js")
 
 // middleware
 app.use(express.json())
@@ -34,6 +35,7 @@ app.use(passport.session())
 app.use("/auth", authRoutes)
 app.use("/user", userRoutes)
 app.use("/eduposts", eduPostsRoutes)
+app.use("/layanan",layananRoutes)
 
 // Sinkronisasi model Sequelize ke database
 sequelize.sync().then(() => {
