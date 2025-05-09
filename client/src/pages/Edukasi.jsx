@@ -46,7 +46,7 @@ const Edukasi = () => {
   }
 
   return (
-    <div className="flex flex-col h-full min-h-0 w-full relative">
+    <div className="flex flex-col h-full min-h-0 w-full relative bg-[url('eduPostBg.jpg')] bg-contain ">
       {/* Scrollable grid content */}
       <div className="flex-grow min-h-0 overflow-y-auto scrollbar-green">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 p-4 auto-rows-max">
@@ -56,7 +56,9 @@ const Edukasi = () => {
                 .slice()
                 .reverse()
                 .map((post) => (
-                  <div className="w-full" key={post.id}>
+                  <div
+                    className="w-full"
+                    key={post.id}>
                     <div className="card w-full bg-base-100 shadow-md border border-gray-200 h-full">
                       <div className="card-body p-4 flex flex-col h-full">
                         <h2 className="card-title text-md font-semibold text-gray-800 ">{post.title}</h2>

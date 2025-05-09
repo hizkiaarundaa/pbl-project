@@ -1,17 +1,28 @@
-const HadiahCard = () => {
+const HadiahCard = ({ title, description, point, imageUrl, onClick }) => {
   return (
-    <div className="card bg-base-100 image-full w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-warning">Buy Now</button>
+    <div className="w-full">
+      <div className="card w-full shadow-md overflow-hidden border-green-200 h-full">
+        <div
+          className="relative group card-body p-4 flex flex-col h-full justify-between text-white"
+          style={{
+            backgroundImage: `url(${imageUrl})`,
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+          }}>
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/80 transition duration-300 rounded-md" />
+          <div className="relative z-10">
+            <h2 className="card-title text-md font-semibold">{title}</h2>
+            <p className="text-sm sm:text-base mb-4 text-justify opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {description}
+            </p>
+          </div>
+          <div className="relative z-10 card-actions justify-end items-center mt-auto">
+            <button
+              className="btn btn-warning text-white"
+              onClick={onClick}>
+              {point} Poin
+            </button>
+          </div>
         </div>
       </div>
     </div>
